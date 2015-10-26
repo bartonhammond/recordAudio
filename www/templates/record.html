@@ -1,0 +1,18 @@
+<ion-view view-title="Grabación de Audio">
+  <ion-content>
+    <h1>Recording</h1>
+    <div style="text-align:center;">
+    	<a class="button button-outline icon-left ion-play button-balanced" ng-click="play()">Play</a>
+	    <a class="button button-outline icon-left ion-pause button-energized" ng-click="pause()">Pause</a>
+	    <a class="button button-outline icon-left ion-record button-assertive" ng-click="record()">Rec</a>
+	    <a class="button button-outline icon-left ion-stop button-dark" ng-click="stop()">Stop</a>
+    </div>
+    <br>
+    <div id="resultado"></div>
+    <div id="duracion"></div>
+    <div style="text-align:right;padding-right:10px;">
+      <br><br>
+      <a class="button button-outline icon-left ion-upload button-dark" ng-click="upload()">Upload</a>
+    </div>    
+  </ion-content>
+</ion-view>
