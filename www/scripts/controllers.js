@@ -176,4 +176,31 @@ angular.module('starter.controllers', [])
       getMedia().pause();
     };     
   });  
-});
+  })
+
+  .controller('pictureCtrl', function($scope, $cordovaCamera ) {
+    document.addEventListener("deviceready", function () {
+      
+      var options = {
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.CAMERA,
+        allowEdit: true,
+        encodingType: Camera.EncodingType.JPEG,
+        targetWidth: 300,
+        targetHeight: 500,
+        popoverOptions: CameraPopoverOptions,
+        saveToPhotoAlbum: false,
+        correctOrientation:true
+      };
+      
+      $scope.getPhoto = function() {
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+          $scope.lastPhoto = "data:image/jpeg;base64," + imageData;
+        }, function(err) {
+          console.log('getPicture',err);
+        });
+      }
+    })
+
+  });

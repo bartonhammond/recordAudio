@@ -38,7 +38,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
         controller: 'recordCtrl'
       }
     }
-  });
+  })
+  
+  .state('app.picture', {
+    url: "/picture",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/picture.html",
+        controller: 'pictureCtrl'
+      }
+    }
+  })
+
+  ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/record');
 });
